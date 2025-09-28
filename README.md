@@ -41,9 +41,10 @@ recipe_suggester/
 ├── templates/
 │   └── index.html        # Frontend UI
 ├── static/
-│   ├── styles.css        # CSS for frontend
+│   └── styles.css        # CSS for frontend
 ├── requirements.txt      # Python dependencies
 └── README.md             # Documentation
+
 
 🚀 Getting Started
 
