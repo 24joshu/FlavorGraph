@@ -31,20 +31,7 @@ Algorithms: Graph theory, Greedy search, Backtracking
 Deployment: Flask (local), optional Dockerfile
 
 📂 Project Structure
-recipe_suggester/
-├── app.py                # Flask app with routes and API
-├── seed_db.py            # Script to create/seed SQLite DB
-├── data/
-│   └── recipes.db        # SQLite DB (auto-created)
-├── recipe_matching.py    # Core matching algorithms
-├── substitution.py       # Ingredient substitution engine
-├── templates/
-│   └── index.html        # Frontend UI
-├── static/
-│   └── styles.css        # CSS for frontend
-├── requirements.txt      # Python dependencies
-└── README.md             # Documentation
-
+<img width="542" height="376" alt="image" src="https://github.com/user-attachments/assets/145f481a-8e65-43e3-a32b-ab67fa089b6d" />
 
 🚀 Getting Started
 
@@ -130,3 +117,8 @@ Add new cuisines or categories as needed.
 Enhance substitution rules in substitution.py for more intelligent suggestions.
 
 Improve UI styling in static/styles.css and templates.
+
+Sample Results
+<img width="1432" height="823" alt="image" src="https://github.com/user-attachments/assets/aff5e5b4-8023-42f6-8f6a-803ab526f10b" />
+<img width="1602" height="892" alt="image" src="https://github.com/user-attachments/assets/48630d57-a926-4b40-9c7f-f4e4c9ef230a" />
+
