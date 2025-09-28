@@ -1,8 +1,9 @@
-# Recipe Suggester (Minimal)
 
-A minimal Flask project that suggests recipes based on available ingredients.
-This repo includes a seeded SQLite database (`data/recipes.db`) with a few sample recipes
-and substitutions.
+# Recipe Suggester
+
+An intelligent recipe suggestion web app built with Python Flask + SQLite + HTML/CSS/JS, that helps users discover dishes based on the ingredients they have.
+
+It leverages graph theory, backtracking, and greedy algorithms to efficiently match recipes, analyze ingredient gaps, and even suggest substitutions for missing ingredients.
 
 ## How to run
 
@@ -15,6 +16,7 @@ and substitutions.
 
 2. Run the app:
    ```bash
+   puthon seed_db.py
    python app.py
    ```
 
@@ -28,4 +30,50 @@ and substitutions.
 - `templates/index.html` — simple frontend
 - `static/styles.css` — basic styling
 - `data/recipes.db` — seeded SQLite DB
+
+✨ Features
+
+ Suggest recipes based on available ingredients
+ Supports regional cuisines: Telugu, Gujarati, Marathi (extendable to more)
+ Ingredient gap analysis — see what’s missing
+ Smart substitution engine (direct, category, fuzzy matches)
+ Photos for recipes (local or URL-based)
+ Modern frontend with chip-based ingredient entry and results UI
+ Shopping list aggregation from suggested recipes
+ Fully extensible database (seed_db.py makes it easy to add new recipes
+
+🛠️ Tech Stack
+
+Backend: Python 3, Flask
+
+Database: SQLite3
+
+Frontend: HTML5, CSS3, Vanilla JS
+
+Algorithms: Graph theory, Backtracking, Greedy search
+
+Deployment: Flask (local), optional Dockerfile
+
+📂 Project Structure
+recipe_suggester/
+├── app.py                # Flask app (routes, API)
+├── seed_db.py            # Script to create/seed SQLite DB
+├── data/
+│   └── recipes.db        # SQLite DB (auto-created)
+├── recipe_matching.py    # Core matching algorithms
+├── substitution.py       # Substitution engine
+├── templates/
+│   └── index.html        # Frontend UI
+├── static/
+│   ├── styles.css        # CSS for frontend
+├── requirements.txt      # Python dependencies
+└── README.md             # Documentation
+
+Results
+<img width="1523" height="903" alt="image" src="https://github.com/user-attachments/assets/c81039e1-81cf-43fb-b6ae-d30ad9583669" />
+<img width="1443" height="821" alt="image" src="https://github.com/user-attachments/assets/5031c8f4-6fdd-4fd0-bdbe-87529b4c05cd" />
+
+
+
+
 
