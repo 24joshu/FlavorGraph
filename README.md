@@ -16,7 +16,7 @@ It leverages graph theory, backtracking, and greedy algorithms to efficiently ma
 
 2. Run the app:
    ```bash
-   puthon seed_db.py
+   python seed_db.py
    python app.py
    ```
 
