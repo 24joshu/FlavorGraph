@@ -86,8 +86,8 @@ instructions
 Example in seed_db.py:
 
 recipes = [
-    ("Pulihora", "Telugu", 3, "Cook rice, mix with tamarind paste.", "/static/images/pulihora.jpg"),
-    ("Undhiyu", "Gujarati", 4, "Mixed vegetables cooked in spices.", "/static/images/undhiyu.jpg")
+    ("Pulihora", "Telugu", 3, "Cook rice, mix with tamarind paste."),
+    ("Undhiyu", "Gujarati", 4, "Mixed vegetables cooked in spices.")
 ]
 
 ⚙️ How Algorithms Work
