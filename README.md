@@ -31,6 +31,15 @@ Algorithms: Graph theory, Greedy search, Backtracking
 Deployment: Flask (local), optional Dockerfile
 
 📂 Project Structure
+
+
+
+
+
+
+
+
+
 <img width="542" height="376" alt="image" src="https://github.com/user-attachments/assets/145f481a-8e65-43e3-a32b-ab67fa089b6d" />
 
 🚀 Getting Started
