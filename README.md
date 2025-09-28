@@ -55,19 +55,17 @@ Algorithms: Graph theory, Backtracking, Greedy search
 Deployment: Flask (local), optional Dockerfile
 
 📂 Project Structure
-recipe_suggester/
-├── app.py                # Flask app (routes, API)
-├── seed_db.py            # Script to create/seed SQLite DB
-├── data/
-│   └── recipes.db        # SQLite DB (auto-created)
-├── recipe_matching.py    # Core matching algorithms
-├── substitution.py       # Substitution engine
-├── templates/
-│   └── index.html        # Frontend UI
-├── static/
-│   ├── styles.css        # CSS for frontend
-├── requirements.txt      # Python dependencies
-└── README.md             # Documentation
+
+
+
+
+
+
+
+
+
+<img width="658" height="427" alt="image" src="https://github.com/user-attachments/assets/42fb4629-2f0d-4fa6-a1c6-a153294b3cd7" />
+
 
 Results
 <img width="1523" height="903" alt="image" src="https://github.com/user-attachments/assets/c81039e1-81cf-43fb-b6ae-d30ad9583669" />
