@@ -54,8 +54,6 @@ class RecipeMatcher:
         S = set([u.strip().lower() for u in (user_ingredients or [])])
         candidates = []
 
-        # Precompute rarity boost: ingredients that appear in fewer recipes are rarer -> positive boost if present
-        # rarity_score(ing) = 1 / (1 + log(1 + popularity))
         rarity_score = {}
         for ing, pop in self.ingredient_popularity.items():
             rarity_score[ing] = 1.0 / (1.0 + math.log(1 + pop))
@@ -70,16 +68,16 @@ class RecipeMatcher:
             covered_by_subst = 0
 
             if allow_subst and missing:
-                # try to cover each missing ingredient with substitutes
+                
                 for m in list(missing):
                     subs = self.subst.find_substitutes(m, limit=6)
-                    # prefer substitutes present in S
+                    
                     chosen = None
                     chosen_score = 0.0
                     chosen_reason = None
                     for name, score, reason in subs:
                         if name in S:
-                            # choose best substitute present in pantry
+                            
                             if score > chosen_score:
                                 chosen = name
                                 chosen_score = score
@@ -90,28 +88,27 @@ class RecipeMatcher:
 
             missing_after_subst = set([m for m in missing if m not in subst_plan])
             req_count = max(1, len(required))
-            # match fraction after substitution
+    
             matched = req_count - len(missing_after_subst)
             match_fraction = matched / req_count
 
-            # substitution coverage fraction
+            
             subst_fraction = covered_by_subst / req_count
 
-            # optional penalty
+
             optional_penalty = len(optional_missing) / max(1, len(optional) + 1)
 
-            # rarity bonus: if user has rare ingredients required by recipe, bump score a bit
+            
             rarity_bonus = 0.0
             for ing in required & S:
-                rarity_bonus += 0.05 * rarity_score.get(ing, 0.2)  # small additive bonus
+                rarity_bonus += 0.05 * rarity_score.get(ing, 0.2)  
 
-            # final score (weighted)
+            
             score = (0.7 * match_fraction) + (0.18 * subst_fraction) + (0.02 * rarity_bonus) - (0.04 * optional_penalty)
 
-            # normalize score into 0..1
+            
             score = max(0.0, min(1.0, score))
 
-            # additional metadata for ranking: fewer total required ingredients preferred if scores close
             candidates.append({
                 'score': score,
                 'r_id': r_id,
@@ -121,7 +118,6 @@ class RecipeMatcher:
                 'matched_count': matched
             })
 
-        # sort by score desc, tiebreaker: fewer missing after subst, more matched, fewer required_count
         candidates.sort(key=lambda x: (x['score'], -x['matched_count'], -x['required_count']), reverse=True)
 
         out = []
