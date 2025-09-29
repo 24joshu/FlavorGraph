@@ -70,7 +70,7 @@
   </div>
 
   <script>
-    // --- simple chip input & UI logic ---
+    
     const ingInput = document.getElementById('ing-input');
     const chipWrap = document.getElementById('chip-wrap');
     const submitBtn = document.getElementById('submitBtn');
@@ -86,10 +86,10 @@
     let ingredients = [];
 
     function renderChips(){
-      // remove existing chips (except input and buttons)
+
       const existing = Array.from(chipWrap.querySelectorAll('.chip'));
       existing.forEach(c => c.remove());
-      // insert chips before input
+      
       ingredients.forEach((ing, idx) => {
         const chip = document.createElement('button');
         chip.type = 'button';
@@ -105,7 +105,7 @@
     function addIngredient(raw){
       const cleaned = raw.trim().toLowerCase();
       if(!cleaned) return;
-      // split if multiple comma-separated
+      
       cleaned.split(',').map(s=>s.trim()).filter(Boolean).forEach(s=>{
         if(!ingredients.includes(s)) ingredients.push(s);
       });
@@ -117,7 +117,7 @@
         e.preventDefault();
         addIngredient(ingInput.value);
       } else if(e.key === 'Backspace' && ingInput.value === '' && ingredients.length){
-        // remove last
+        
         ingredients.pop();
         renderChips();
       }
@@ -128,7 +128,7 @@
         const text = await navigator.clipboard.readText();
         addIngredient(text);
       }catch(e){
-        // fallback prompt
+        
         const t = prompt('Paste ingredients (comma separated)');
         if(t) addIngredient(t);
       }
@@ -181,12 +181,12 @@
       const aggregate = {};
 
       list.forEach(item=>{
-        // card
+        
         const card = document.createElement('article');
         card.className = 'card';
         const scoreBar = Math.max(0, Math.min(100, Math.round(item.score * 100)));
         const miss = item.missing_ingredients || [];
-        // accumulate shopping
+
         miss.forEach(m => aggregate[m] = (aggregate[m]||0)+1);
 
         let subsHTML = '';
@@ -216,7 +216,6 @@
         resultsEl.appendChild(card);
       });
 
-      // shopping list from aggregate (top 8)
       const entries = Object.entries(aggregate).sort((a,b)=>b[1]-a[1]).slice(0,12);
       if(entries.length){
         shoppingPanel.classList.remove('hidden');
@@ -230,7 +229,6 @@
       }
     }
 
-    // small helpers
     function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
     function showRecipe(id){
@@ -243,7 +241,6 @@
       summary.textContent = 'Missing items added to your pantry (chips).';
     }
 
-    // init focus
     chipWrap.addEventListener('click', ()=> ingInput.focus());
   </script>
 </body>
