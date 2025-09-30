@@ -33,14 +33,14 @@ It leverages graph theory, backtracking, and greedy algorithms to efficiently ma
 
 ✨ Features
 
- Suggest recipes based on available ingredients
- Supports regional cuisines: Telugu, Gujarati, Marathi (extendable to more)
- Ingredient gap analysis — see what’s missing
- Smart substitution engine (direct, category, fuzzy matches)
- Photos for recipes (local or URL-based)
- Modern frontend with chip-based ingredient entry and results UI
- Shopping list aggregation from suggested recipes
- Fully extensible database (seed_db.py makes it easy to add new recipes
+ --> Suggest recipes based on available ingredients
+ --> Supports regional cuisines: Telugu, Gujarati, Marathi (extendable to more)
+ --> Ingredient gap analysis — see what’s missing
+ --> Smart substitution engine (direct, category, fuzzy matches)
+ --> Photos for recipes (local or URL-based)
+ --> Modern frontend with chip-based ingredient entry and results UI
+ --> Shopping list aggregation from suggested recipes
+ --> Fully extensible database (seed_db.py makes it easy to add new recipes
 
 🛠️ Tech Stack
 
